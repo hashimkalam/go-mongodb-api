@@ -82,7 +82,7 @@ func TestMongoOperations(t *testing.T) {
 
 	// get employee1 data
 	t.Run("get employee 1", func(t *testing.T) {
-		result, err := empRepo.FindEmployeeID(emp1)
+		result, err := empRepo.FindEmployeeByID(emp1)
 
 		if err != nil {
 			t.Fatal("get operation failed", err)
@@ -118,7 +118,7 @@ func TestMongoOperations(t *testing.T) {
 
 	// get emp1 data after updation
 	t.Run("get employee 1 after updating", func(t *testing.T) {
-		result, err := empRepo.FindEmployeeID(emp1)
+		result, err := empRepo.FindEmployeeByID(emp1)
 
 		if err != nil {
 			t.Fatal("get operation failed", err)
@@ -128,7 +128,7 @@ func TestMongoOperations(t *testing.T) {
 
 	// delete emp1 data
 	t.Run("delete emp1 data", func(t *testing.T) {
-		result, err := empRepo.FindEmployeeID(emp1)
+		result, err := empRepo.FindEmployeeByID(emp1)
 
 		if err != nil {
 			t.Fatal("get operation failed", err)

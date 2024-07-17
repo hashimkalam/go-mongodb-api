@@ -25,7 +25,7 @@ func (r *EmployeeRepo) InsertEmployee(emp *model.Employee) (interface{}, error) 
 	return result.InsertedID, nil
 }
 
-func (r *EmployeeRepo) FindEmployeeID(empID string) (*model.Employee, error) {
+func (r *EmployeeRepo) FindEmployeeByID(empID string) (*model.Employee, error) {
 	var emp model.Employee
 
 	err := r.MongoCollection.FindOne(context.Background(), bson.D{{Key: "employee_id", Value: empID}}).Decode(&emp)
